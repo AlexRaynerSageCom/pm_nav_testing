@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.list {
+  flex: 1;
+  transition: width 500ms;
+
+  &-item {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    color: black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: green;
+      color: white;
+    }
+  }
+
+  &-item:last-child {
+    margin-bottom: 0;
+  }
+}

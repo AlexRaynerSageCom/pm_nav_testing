@@ -1,0 +1,41 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.processes {
+  flex: 2 1 1000px;
+  background-color: blueviolet;
+}
+
+.tabs {
+  background-color: rgb(154, 77, 226);
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: rgb(174, 102, 241);
+    cursor: pointer;
+  }
+}
+
+.tm-perf {
+  padding: 10px;
+  color: white;
+  height: calc(100% - 63px);
+}
+
+.convo {
+  flex: 0 2 600px;
+
+  &--only {
+    flex: 0 1 800px;
+  }
+}
