@@ -1,6 +1,8 @@
 # NavTesting
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+this project was created to test angular routing changes to Performance Management package front-end.
+
+![screenshot](assets/screenshot.png)
 
 ## Development server
 
