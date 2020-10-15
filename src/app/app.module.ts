@@ -11,6 +11,7 @@ import {
   HomeComponent,
   ListComponent,
   InvalidRouteComponent,
+  ReviewComponent,
   TmPerfComponent,
 } from './components';
 
@@ -24,6 +25,7 @@ import {
     HomeComponent,
     InvalidRouteComponent,
     ListComponent,
+    ReviewComponent,
     TmPerfComponent,
   ],
   imports: [

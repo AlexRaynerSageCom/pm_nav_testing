@@ -1,15 +1,16 @@
 :host {
-  flex: 1 0 100px;
+  flex: 1;
 }
 
 .details {
-  margin-left: 10px;
   height: 100%;
   font-weight: bold;
   background-color: #E87F05;
   color: white;
   min-height: 600px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  
+  > * {
+    flex: 1;
+  }
 }

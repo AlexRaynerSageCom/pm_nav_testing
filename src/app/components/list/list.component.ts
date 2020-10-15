@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   template: `
     <div class="wrapper">
-      <div class="list">
+      <div
+        *ngIf="showList"
+        class="list">
         <div
           class="list-item"
           [class.list-item--active]="999 === selectedObj"
@@ -25,12 +27,25 @@ import { Router, ActivatedRoute } from '@angular/router';
   `,
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
+
+  showList: boolean;
+
   selectedObj: number;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.showList = !this.route.firstChild?.firstChild;
+
+    this.router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        this.showList = !this.route.firstChild?.firstChild;
+      }
+    });
+  }
 
   goToNewForm() {
     if (this.selectedObj === 999) {

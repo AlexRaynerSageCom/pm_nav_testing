@@ -5,7 +5,7 @@
 }
 
 .processes {
-  flex: 2 1 1000px;
+  flex: 1;
   background-color: blueviolet;
 }
 
@@ -27,13 +27,12 @@
 }
 
 .tm-perf {
-  padding: 10px;
   color: white;
-  height: calc(100% - 63px);
+  height: calc(100% - 43px);
 }
 
 .convo {
-  flex: 0 2 600px;
+  flex: 1;
 
   &--only {
     flex: 0 1 800px;

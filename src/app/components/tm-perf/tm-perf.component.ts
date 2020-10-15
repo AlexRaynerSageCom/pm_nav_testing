@@ -22,6 +22,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
       </div>
 
       <app-conversation
+        *ngIf="showConvo"
         class="convo"
         [class.convo--only]="!processEnabled">
       </app-conversation>
@@ -32,15 +33,20 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 export class TmPerfComponent implements OnInit {
   processEnabled: boolean;
 
+  showConvo: boolean;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute) {}
 
   ngOnInit() {
+    console.log(this.route);
     this.processEnabled = this.route.children.length > 0;
+    this.showConvo = !this.route.firstChild?.firstChild;
 
     this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
+        this.showConvo = !this.route.firstChild?.firstChild;
         this.processEnabled = val.url.split('/').length > 3;
       }
     });

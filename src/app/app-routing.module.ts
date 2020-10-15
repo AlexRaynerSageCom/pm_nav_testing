@@ -7,7 +7,8 @@ import {
   DetailsComponent,
   DashboardComponent,
   HomeComponent,
-  TmPerfComponent
+  TmPerfComponent,
+  ReviewComponent
 } from './components';
 
 const routes: Routes = [
@@ -34,7 +35,13 @@ const routes: Routes = [
               },
               {
                 path: ':id',
-                component: DetailsComponent
+                component: DetailsComponent,
+                children: [
+                  {
+                    path: 'review',
+                    component: ReviewComponent
+                  }
+                ]
               }
             ]
           }
